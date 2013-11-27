@@ -1,0 +1,12 @@
+twitter:
+  consumerKey: 'mochizuki'
+  consumerSecret: 'mochizuki'
+  callbackURL: 'http://localhost:3001/callback'
+root: 'http://localhost:3001'
+mongo: 'mongodb://localhost/gk'
+cookie_secret: 'mochizuki'
+message: 'ゲハブログを検知したためリムーブしました #gehakiller'
+start_message: 'ゲハブログだけを殺すアプリ 開始しました #gehakiller'
+ignore_hosts:
+  - 'jin115.com'
+  - 'blog.esuteru.com'

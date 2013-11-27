@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ゲハブログだけを殺すアプリ</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46058730-1', 'kfka.net');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    <a href="/logout">ログアウト</a>
+    <p>履歴とか</p>
+    <table rules="all">
+      <thead>
+        <tr>
+          <td>screen_name</td>
+          <td>status_id</td>
+          <td>status</td>
+          <td>action_type</td>
+          <td>timestamp</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% actions.forEach(function(action) {%>
+        <tr>
+          <td>@<%= action.target.scren_name %></td>
+          <td><%= action.target.status_id %></td>
+          <td><%= action.target.text %></td>
+          <td><%= action.action_type %></td>
+          <td><%= action.timestamp %></td>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>
