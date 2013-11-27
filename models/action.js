@@ -67,7 +67,7 @@ ActionSchema.statics.removeUser = function(user, target, cb) {
 
   var User = require('./user');
   User.findById(target.user_id, function(err, target_user) {
-    if(target_user.enable) return cb(null);
+    if(target_user && target_user.enable) return cb(null);
 
     async.series([
       function(next) {
