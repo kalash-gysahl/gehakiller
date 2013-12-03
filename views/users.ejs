@@ -12,17 +12,25 @@
 
       ga('create', 'UA-46058730-1', 'kfka.net');
       ga('send', 'pageview');
-
     </script>
   </head>
   <body>
-    あなたはゲハブログのURLをTwitterに投稿し、以下<%= actions.length %>人を不快にさせ、当アプリから自動的にリムーブされました<br />
-    当アプリとTwitterを連携することにより、自動的にフォローしなおしてもらうことができます。<br />
-    <a href="/">詳しい説明を見る</a>
+    <p>以下<%= actions.length %>人の人たちは、特定のURLを含むツイートをしたフォロワーを自動的にリムーブするよう設定しています。</p>
+    <p>当アプリとTwitterを連携することにより、自動的にフォローしなおしてもらうことができます。</p>
+    <p><a href="/">詳しい説明を見る</a></p>
+
+    <p>現時点の特定URLは以下の2つです</p>
+    <ul>
+      <li>ttp://jin115.com</li>
+      <li>ttp://blog.esuteru.com</li>
+    </ul>
+
+    <p>あなたをフォローしていたユーザ</p>
     <ul>
       <% actions.forEach(function(action) {%>
-      <li>@<%= action.user.scren_name %></li>
+      <li><a href="https://twitter.com/<%= action.user.scren_name %>"> @<%= action.user.scren_name %> </a> </li>
       <% }); %>
     </ul>
+
   </body>
 </html>
